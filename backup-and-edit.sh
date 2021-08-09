@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 ###############################
 # How to use
 # 1. Download this file into "~/".
@@ -6,7 +8,6 @@
 # 3. Edit a file.
 #    $ vim ~/.bashrc
 ###############################
-#!/usr/bin/env bash
 
 set -eu
 set -o pipefail
@@ -22,7 +23,7 @@ fi
 mkdir -p ${BACKUP_DIR}
 
 if [[ -e $1 ]]; then
-  cp $1 ${BACKUP_DIR}/$(basename $1).$(date "+%Y%m%d_%H%M%S")
+  cp "$1" ${BACKUP_DIR}/$(basename "$1").$(date "+%Y%m%d_%H%M%S")
 fi
 
-$EDITOR $1
+$EDITOR "$1"
