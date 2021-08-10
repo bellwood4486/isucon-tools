@@ -94,3 +94,10 @@ sudo mysql -uroot -e "show variables like '%long_q%'"
 | long_query_time | 10.000000 |
 +-----------------+-----------+
 ```
+
+## テーブルのデータ量を確認する
+
+最後の`isucari`は変えること。
+```shell
+sudo mysql -e 'select table_name, table_rows from information_schema.TABLES where table_schema = "isucari";'
+```

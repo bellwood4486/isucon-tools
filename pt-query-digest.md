@@ -29,5 +29,5 @@ pt-query-digest --version
 ## 集計
 
 ```shell
-sudo pt-query-digest /var/log/mysql/mysql-slow.log --limit 10 > ptq.log
+sudo pt-query-digest /var/log/mysql/mysql-slow.log --limit 10 > ~/ptq.log
 ```
