@@ -149,47 +149,6 @@ mysql> use isucari;
 mysql> show tables;
 ```
 
-## mysqlの設定ファイルを確認する
-```
-$ mysql --help | grep "Default options" -A 1
-Default options are read from the following files in the given order:
-/etc/my.cnf /etc/mysql/my.cnf ~/.my.cnf
-```
-`-A`は見つかった行の次のn行も表示する。
-
-
-## mysqlの設定ファイルの見方(一部)
-```
-!includedir /etc/mysql/conf.d/
-!includedir /etc/mysql/mysql.conf.d/
-```
-これはディレクトリがインクルードされているということ。
-
-
-## mysqlの設定ファイルでログ周りの設定を調べる
-```
-isucon@isucon9q:~$ grep log /etc/mysql/mysql.conf.d/*
-/etc/mysql/mysql.conf.d/mysqld.cnf:# Be aware that this log type is a performance killer.
-/etc/mysql/mysql.conf.d/mysqld.cnf:# As of 5.1 you can enable the log at runtime!
-/etc/mysql/mysql.conf.d/mysqld.cnf:#general_log_file        = /var/log/mysql/mysql.log
-/etc/mysql/mysql.conf.d/mysqld.cnf:#general_log             = 1
-/etc/mysql/mysql.conf.d/mysqld.cnf:# Error log - should be very few entries.
-★/etc/mysql/mysql.conf.d/mysqld.cnf:log_error = /var/log/mysql/error.log
-★/etc/mysql/mysql.conf.d/mysqld.cnf:#slow_query_log		= 1
-/etc/mysql/mysql.conf.d/mysqld.cnf:#slow_query_log_file	= /var/log/mysql/mysql-slow.log
-/etc/mysql/mysql.conf.d/mysqld.cnf:#log-queries-not-using-indexes
-/etc/mysql/mysql.conf.d/mysqld.cnf:# The following can be used as easy to replay backup logs or for replication.
-/etc/mysql/mysql.conf.d/mysqld.cnf:#log_bin			= /var/log/mysql/mysql-bin.log
-/etc/mysql/mysql.conf.d/mysqld.cnf:expire_logs_days	= 10
-/etc/mysql/mysql.conf.d/mysqld.cnf:max_binlog_size   = 100M
-/etc/mysql/mysql.conf.d/mysqld.cnf:#binlog_do_db		= include_database_name
-/etc/mysql/mysql.conf.d/mysqld.cnf:#binlog_ignore_db	= include_database_name
-/etc/mysql/mysql.conf.d/mysqld_safe_syslog.cnf:syslog
-```
-
-エラーログが`/var/log`配下に履かれているのがわかる。★部分。
-
-また、スロークエリログが無効(コメントアウト)されているのもわかる。★部分。
 
 ## nginxのアクセスログのフォーマットををalpが読める形にする
 ```
