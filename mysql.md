@@ -101,3 +101,10 @@ sudo mysql -uroot -e "show variables like '%long_q%'"
 ```shell
 sudo mysql -e 'select table_name, table_rows from information_schema.TABLES where table_schema = "isucari";'
 ```
+
+## インデックスを確認する
+
+2箇所ある`isucari`は変えること。
+```shell
+sudo mysql -e 'use isucari;select TABLE_NAME, COLUMN_NAME, INDEX_NAME from INFORMATION_SCHEMA.STATISTICS where TABLE_SCHEMA="isucari";'
+```
