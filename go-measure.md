@@ -5,12 +5,13 @@
 
 ## import文の追加
 
+```shell
+go get "github.com/najeira/measure"
+```
+
 ```go
 import (
 // ...
-	"bytes"
-	"io"
-	"math"
 	"github.com/najeira/measure"
 // ...
 )
@@ -19,7 +20,6 @@ import (
 ## 計測用データ型
 
 ```go
-// 計測時間データ型
 type MyLog struct {
 	Key   string
 	Count int64
@@ -32,7 +32,6 @@ type MyLog struct {
 }
 ```
 
-
 ## 集計をCSVで返すAPIを追加
 
 ```go
@@ -40,7 +39,6 @@ type MyLog struct {
 func main() {
 	// ...
 	
-	// 集計API
 	mux.HandleFunc(pat.Get("/stats"), getStats)
 }
 
