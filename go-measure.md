@@ -74,3 +74,30 @@ func getStats(w http.ResponseWriter, r *http.Request) {
 	}
 }
 ```
+
+## 計測
+
+ひとつのメソッドを雑に測る。
+```go
+func foo() {
+    defer measure.Start("foo").Stop()
+
+    // your code
+
+}
+```
+
+ひとつのメソッド内で複数箇所を分けて測る。
+```go
+func foo() {
+    m := measure.Start("foo:part1")
+    // ...
+    m.Stop()
+    
+	m = measure.Start("foo:part2")
+    // ...
+    m.Stop()
+}
+```
+
+※上記2つは組み合わせて書くこともできる。
