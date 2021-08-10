@@ -75,7 +75,7 @@ func getStats(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
-## 計測
+## 計測コードを仕込む
 
 ひとつのメソッドを雑に測る。
 ```go
