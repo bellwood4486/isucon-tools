@@ -7,11 +7,18 @@
 ## Ubuntu
 ```shell
 sudo apt-get install -y gnupg2
-wget https://repo.percona.com/apt/percona-release_latest.$(lsb_release -sc)_all.deb
-sudo dpkg -i percona-release_latest.$(lsb_release -sc)_all.deb
-sudo apt-get update
-sudo apt-get install -y percona-toolkit
+```
 
+```shell
+wget https://repo.percona.com/apt/percona-release_latest.$(lsb_release -sc)_all.deb
+```
+
+```shell
+sudo dpkg -i percona-release_latest.$(lsb_release -sc)_all.deb
+```
+
+```shell
+sudo apt-get update; sudo apt-get install -y percona-toolkit
 ```
 
 バージョンの確認
