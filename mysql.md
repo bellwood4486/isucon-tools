@@ -108,3 +108,9 @@ sudo mysql -e 'select table_name, table_rows from information_schema.TABLES wher
 ```shell
 sudo mysql -e 'use isucari;select TABLE_NAME, COLUMN_NAME, INDEX_NAME from INFORMATION_SCHEMA.STATISTICS where TABLE_SCHEMA="isucari";'
 ```
+
+## インタラクティブモードで起動する
+
+```shell
+sudo mysql
+```
