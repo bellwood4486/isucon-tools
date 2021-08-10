@@ -13,3 +13,8 @@ sudo apt-get update
 sudo apt-get install -y percona-toolkit
 
 ```
+
+バージョンの確認
+```shell
+pt-query-digest --version
+```
