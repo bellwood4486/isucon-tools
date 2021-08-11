@@ -9,7 +9,7 @@ readonly DB_SLOW_LOG=/var/log/mysql/mysql-slow.log
 sudo truncate --size 0 "${ACCESS_LOG}"
 sudo truncate --size 0 "${DB_SLOW_LOG}"
 
-cd ~/isucon9-qualify
+sudo systemctl restart isucari.golang.service
 sudo systemctl stop payment.service shipment.service
 
-./bin/benchmarker -target-url http://127.0.0.1
+~/isucon9-qualify/bin/benchmarker -target-url http://127.0.0.1
