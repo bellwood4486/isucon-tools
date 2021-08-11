@@ -114,3 +114,28 @@ sudo mysql -e 'use isucari;select TABLE_NAME, COLUMN_NAME, INDEX_NAME from INFOR
 ```shell
 sudo mysql
 ```
+
+## mysqlの動作確認
+標準入力を受け付けるので以下を実行
+```sh
+echo "select now();" | sudo mysql
+```
+
+## mysqlのクライアントからつなぐ
+```
+isucon@isucon9q:~$ mysql -uisucari -pisucari
+```
+
+- `-u`: ユーザー名
+- `-p`: パスワード
+
+データベースを切り替える
+```
+mysql> use isucari;
+```
+
+テーブルの情報を見る
+```
+mysql> show tables;
+```
+
