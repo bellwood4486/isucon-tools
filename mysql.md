@@ -139,3 +139,12 @@ mysql> use isucari;
 mysql> show tables;
 ```
 
+## mysqlのバージョン確認
+
+```shell
+mysql --version
+```
+
+```shell
+select version();
+```

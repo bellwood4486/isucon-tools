@@ -8,6 +8,7 @@
 ```
 ※鍵はパーミッション`600`にしておくこと
 
+`~/.ssh/config`に書く場合
 ```
 host isu
   hostname xxx.xxx.xxx.xxx
@@ -28,4 +29,13 @@ Host github github.com
   HostName github.com
   IdentityFile ~/.ssh/id_git_rsa #ここに自分の鍵のファイル名
   User git
+```
+
+## ポートフォワーディング
+```shell
+ssh ${user}@${server} -L ${local_posrt}:${target_server}:${target_port}
+```
+例(configに記載済みの場合)
+```shell
+ssh isu -L 53306:127.0.0.1:3306
 ```
