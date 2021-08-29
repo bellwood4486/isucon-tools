@@ -22,3 +22,8 @@ func main() {
 ```sh
 go tool pprof http://localhost:6060/debug/pprof/profile?seconds=70
 ```
+
+## コマンドラインで分析する
+
+
+参考：[Golangのpprofの使い方【コマンドラインツール編】 - Carpe Diem](https://christina04.hatenablog.com/entry/golang-pprof-cli)
