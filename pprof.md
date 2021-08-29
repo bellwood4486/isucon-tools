@@ -25,5 +25,33 @@ go tool pprof http://localhost:6060/debug/pprof/profile?seconds=70
 
 ## コマンドラインで分析する
 
+### 開く
+
+```sh
+go tool pprof 実行ファイル プロファイル
+```
+例
+```sh
+go tool pprof pprof/pprof.isucondition.samples.cpu.002.pb.gz cpu.pprof
+```
+参考： [Golangのpprofの使い方【基礎編】 - Carpe Diem](https://christina04.hatenablog.com/entry/golang-pprof-basic)
+
+### top N を見る
+```
+top N
+```
+例
+```
+top 50
+```
+
+### 遅いメソッドの内訳見る
+```
+peek メソッド名
+```
+例
+```
+peek main.postIsuCondition
+```
 
 参考：[Golangのpprofの使い方【コマンドラインツール編】 - Carpe Diem](https://christina04.hatenablog.com/entry/golang-pprof-cli)
