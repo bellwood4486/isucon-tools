@@ -68,6 +68,13 @@ grep log /etc/mysql/mysql.conf.d/*
 
 ## スロークエリの設定
 
+### 設定
+```
+slow_query_log         = 1
+slow_query_log_file    = /var/log/mysql/mariadb-slow.log
+long_query_time        = 0.01
+```
+
 ### 有効無効の確認
 ```shell
 sudo mysql -uroot -e "show variables like '%slow_query%'"
