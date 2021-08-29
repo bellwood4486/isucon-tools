@@ -155,3 +155,7 @@ mysql --version
 ```shell
 select version();
 ```
+
+## バルクインサート
+
+参考： [【Go】sqlxでBulk Insert - Qiita](https://qiita.com/sayama0402/items/b16cbdb15a20fe5a54b0)
